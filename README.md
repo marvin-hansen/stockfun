@@ -5,7 +5,9 @@ Based on [this article](https://www.thepythoncode.com/article/stock-price-predic
 
 Implements LSTM model: 
 
-Example: SPY on Jan/14/2020 
+
+## Example:
+SPY on Jan/14/2020 
 * MSE: 0.0029541658914964387
 * MAE: 0.05213233828544617
 * Future price after 1 days is 301.65$

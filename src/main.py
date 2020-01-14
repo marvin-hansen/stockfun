@@ -1,7 +1,7 @@
-from keras.callbacks import ModelCheckpoint, TensorBoard
+import pandas as pd
+from keras.callbacks import ModelCheckpoint
 
 from src.test import *
-import pandas as pd
 
 
 def main():
@@ -19,7 +19,7 @@ def main():
 
         print("construct the model")
         model = create_model(N_STEPS, loss=LOSS, units=UNITS, cell=CELL, n_layers=N_LAYERS,
-                             dropout=DROPOUT, optimizer=OPTIMIZER)
+                             dropout=DROPOUT, optimizer=OPTIMIZER, activation=ACTIVATION)
 
         # some tensorflow callbacks
         print("Create checkpoints")

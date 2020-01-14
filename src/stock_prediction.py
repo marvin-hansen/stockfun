@@ -1,13 +1,12 @@
-from keras.models import Sequential
-from keras.layers import LSTM, Dense, Dropout
-from sklearn import preprocessing
-from sklearn.model_selection import train_test_split
-from yahoo_fin import stock_info as si
 from collections import deque
 
 import numpy as np
 import pandas as pd
-import random
+from keras.layers import Dense, Dropout
+from keras.models import Sequential
+from sklearn import preprocessing
+from sklearn.model_selection import train_test_split
+from yahoo_fin import stock_info as si
 
 
 def load_data(ticker, n_steps, scale=True, shuffle=False, lookup_step=1,
@@ -102,7 +101,7 @@ def load_data(ticker, n_steps, scale=True, shuffle=False, lookup_step=1,
 
 
 def create_model(input_length, units, cell, n_layers, dropout,
-                 loss, optimizer):
+                 loss, optimizer, activation):
     model = Sequential()
     for i in range(n_layers):
         if i == 0:
@@ -117,7 +116,7 @@ def create_model(input_length, units, cell, n_layers, dropout,
         # add dropout after each layer
         model.add(Dropout(dropout))
 
-    model.add(Dense(1, activation="linear"))
+    model.add(Dense(1, activation=activation))
     model.compile(loss=loss, metrics=["mean_absolute_error"], optimizer=optimizer)
 
     return model

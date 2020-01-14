@@ -1,7 +1,8 @@
-from src.stock_prediction import create_model, load_data, np
-from src.parameters import *
 import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score
+
+from src.parameters import *
+from src.stock_prediction import *
 
 
 def upsert_folders():

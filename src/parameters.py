@@ -1,9 +1,10 @@
 import os
+
 import time
 from keras.layers import LSTM
 
 # Window size or the sequence length
-N_STEPS = 5
+N_STEPS = 3
 # Lookup step, 1 is the next day
 LOOKUP_STEP = 1
 
@@ -15,7 +16,6 @@ FEATURE_COLUMNS = ["adjclose", "volume", "open", "high", "low"]
 date_now = time.strftime("%Y-%m-%d")
 
 ### model parameters
-
 N_LAYERS = 7
 # LSTM cell
 CELL = LSTM
@@ -28,8 +28,9 @@ DROPOUT = 0.50
 # mean squared error loss
 LOSS = "mse"
 OPTIMIZER = "adam"
-BATCH_SIZE = 32  # 128
-EPOCHS = 7  # 300
+ACTIVATION = 'relu'
+BATCH_SIZE = 32
+EPOCHS = 7
 
 # Apple stock market
 TICKER = "SPY"
