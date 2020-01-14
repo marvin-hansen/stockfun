@@ -25,4 +25,5 @@ Links to [install instructions](https://www.tensorflow.org/install/gpu)
 1) Clone repo
 2) Install requirements.txt: `pip install -r requirements.txt `  
 3) Inspect & adjust model [parameters](src/parameters.py) 
-4) Run 
+4) Run main.py 
+5) Inspect results 

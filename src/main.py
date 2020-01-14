@@ -48,8 +48,8 @@ def main():
         future_price = predict(model, data)
         print(f"Future price after {LOOKUP_STEP} days is {future_price:.2f}$")
         print("Accuracy Score:", get_accuracy(model, data))
-
-        plot_graph(model, data)
+        title = TICKER + f" Price prediction for {LOOKUP_STEP} days"
+        plot_graph(title, model, data)
 
     run()
 

@@ -28,7 +28,7 @@ DROPOUT = 0.50
 # mean squared error loss
 LOSS = "mse"
 OPTIMIZER = "adam"
-BATCH_SIZE = 128
+BATCH_SIZE = 32  # 128
 EPOCHS = 7  # 300
 
 # Apple stock market

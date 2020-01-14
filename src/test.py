@@ -16,7 +16,7 @@ def upsert_folders():
         os.mkdir("data")
 
 
-def plot_graph(model, data):
+def plot_graph(title, model, data):
     y_test = data["y_test"]
     X_test = data["X_test"]
     y_pred = model.predict(X_test)
@@ -24,6 +24,8 @@ def plot_graph(model, data):
     y_pred = np.squeeze(data["column_scaler"]["adjclose"].inverse_transform(y_pred))
     plt.plot(y_test[-200:], c='b')
     plt.plot(y_pred[-200:], c='r')
+
+    plt.title(title, fontsize=16)
     plt.xlabel("Days")
     plt.ylabel("Price")
     plt.legend(["Actual Price", "Predicted Price"])
