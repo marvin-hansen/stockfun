@@ -1,4 +1,3 @@
-import pandas as pd
 from keras.callbacks import ModelCheckpoint
 
 from src.test import *
@@ -27,12 +26,12 @@ def main():
         # tensorboard = TensorBoard(log_dir=os.path.join("logs", model_name))
 
         print("Fit the model to the data")
-        history = model.fit(data["X_train"], data["y_train"],
-                            batch_size=BATCH_SIZE,
-                            epochs=EPOCHS,
-                            validation_data=(data["X_test"], data["y_test"]),
-                            callbacks=[checkpointer],
-                            verbose=1)
+        model.fit(data["X_train"], data["y_train"],
+                  batch_size=BATCH_SIZE,
+                  epochs=EPOCHS,
+                  validation_data=(data["X_test"], data["y_test"]),
+                  callbacks=[checkpointer],
+                  verbose=0)
         model.save(os.path.join("results", model_name) + ".h5")
 
         print("evaluate the model")

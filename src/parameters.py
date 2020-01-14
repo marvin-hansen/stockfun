@@ -4,7 +4,7 @@ import time
 from keras.layers import LSTM
 
 # Window size or the sequence length
-N_STEPS = 3
+N_STEPS = 5
 # Lookup step, 1 is the next day
 LOOKUP_STEP = 1
 
@@ -16,11 +16,11 @@ FEATURE_COLUMNS = ["adjclose", "volume", "open", "high", "low"]
 date_now = time.strftime("%Y-%m-%d")
 
 ### model parameters
-N_LAYERS = 7
+N_LAYERS = 5
 # LSTM cell
 CELL = LSTM
-# 256 LSTM neurons
-UNITS = 512
+# LSTM neurons
+UNITS = 1024
 # 40% dropout
 DROPOUT = 0.50
 
@@ -32,7 +32,7 @@ ACTIVATION = 'relu'
 BATCH_SIZE = 32
 EPOCHS = 7
 
-# Apple stock market
+# Stock market ticker symbol (Yahoo)
 TICKER = "SPY"
 ticker_data_filename = os.path.join("data", f"{TICKER}_{date_now}.csv")
 # model name to save
