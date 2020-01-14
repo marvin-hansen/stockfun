@@ -1,6 +1,8 @@
 tensorflow
 sklearn
+keras
 matplotlib
 numpy
 pandas
 yahoo_fin
+requests_html
